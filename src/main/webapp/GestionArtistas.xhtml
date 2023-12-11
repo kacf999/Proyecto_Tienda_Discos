@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<body>
+	<h:form>
+		<p>Clave</p>
+		<p:inputText value="#{controlRegistroArtista.artista.clave}" />
+		<br />
+		<p>Nombre</p>
+		<p:inputText value="#{controlRegistroArtista.artista.nombre}" />
+		<br />
+		<p>genero</p>
+		<p:inputText value="#{controlRegistroArtista.artista.genero}" />
+		<br />
+		<p:commandButton value="Agregar"
+			actionListener="#{controlRegistroArtista.agregar}" ajax="lista" />
+			
+		<br />
+		<p:commandButton value="Consultar"
+			actionListener="#{controlRegistroArtista.consultar}" ajax="lista" />
+		<br />
+		
+		<p:dataTable id="lista" value="#{controlRegistroArtista.artistas}"
+			var="artista">
+			<p:column>
+				<h:outputText value="#{artista.clave}" />
+			</p:column>
+			<p:column>
+				<h:outputText value="#{artista.nombre}" />
+			</p:column>
+			<p:column>
+				<h:outputText value="#{artista.genero}" />
+			</p:column>
+			<p:column>
+				<p:commandButton value="Eliminar"
+					actionListener="#{controlRegistroArtista.eliminar(artista)}"
+					update="lista" />
+			</p:column>
+		</p:dataTable>
+	</h:form>
+	<a href="index.xhtml" ><button>Menu Principal</button></a>
+</body>
+</html>
