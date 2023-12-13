@@ -27,6 +27,9 @@
 		<p>descripcion</p>
 		<p:inputText value="#{controlRegistroDisco.disco.descripcion}" />
 		<br />
+		<p>Clave Artista</p>
+		<p:inputText value="#{controlRegistroDisco.disco.claveArtista}" />
+		<br />
 		<p:commandButton value="Agregar"
 			actionListener="#{controlRegistroDisco.agregar}" ajax="lista" />
 			
@@ -52,6 +55,9 @@
 			</p:column>
 			<p:column>
 				<h:outputText value="#{disco.descripcion}" />
+			</p:column>
+			<p:column>
+				<h:outputText value="#{disco.claveArtista}" />
 			</p:column>
 			<p:column>
 				<p:commandButton value="Eliminar"

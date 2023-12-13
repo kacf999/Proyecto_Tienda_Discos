@@ -7,6 +7,7 @@ public class Disco {
 	private double precio;
 	private int stock;
 	private String descripcion;
+	private String claveArtista;
 	
 	public Disco() {
 	}
@@ -18,14 +19,17 @@ public class Disco {
 		this.precio = e.precio;
 		this.stock = e.stock;
 		this.descripcion = e.descripcion;
+		this.claveArtista = e.claveArtista;
 	}
-	public Disco(String clave, String nombre, String anio, double precio, int stock, String descripcion) {
+	
+	public Disco(String clave, String nombre, String anio, double precio, int stock, String descripcion, String claveArtista) {
 		this.clave = clave;
 		this.nombre = nombre;
 		this.anio = anio;
 		this.precio = precio;
 		this.stock = stock;
 		this.descripcion = descripcion;
+		this.claveArtista = claveArtista;
 	}
 	public String getClave() {
 		return clave;
@@ -64,6 +68,14 @@ public class Disco {
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
+	}
+
+	public String getClaveArtista() {
+		return claveArtista;
+	}
+
+	public void setClaveArtista(String claveArtista) {
+		this.claveArtista = claveArtista;
 	}
 	
 }

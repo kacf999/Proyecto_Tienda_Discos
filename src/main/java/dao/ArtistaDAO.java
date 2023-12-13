@@ -17,7 +17,7 @@ public class ArtistaDAO {
 	
 	public void insertar(Artista artista) {
 		Connection conexion = administrador.dameConexion();
-		String comandoSQL = "INSERT INTO Artistas VALUES(?,?,?)";
+		String comandoSQL = "INSERT INTO artistas VALUES(?,?,?)";
 
 		PreparedStatement comando;
 		try {
@@ -33,7 +33,7 @@ public class ArtistaDAO {
 	
 	public void borrar(Artista artista) {
 		Connection conexion = administrador.dameConexion();
-		String comandoSQL = "DELETE FROM Artistas WHERE clave =?";
+		String comandoSQL = "DELETE FROM artistas WHERE clave =?";
 
 		PreparedStatement comando;
 		try {
@@ -48,7 +48,7 @@ public class ArtistaDAO {
 	
 	public void insertarTransaccion(Artista artista, Connection conexion) throws SQLException {
 
-		String comandoSQL = "INSERT INTO Artistas VALUES(?,?,?)";
+		String comandoSQL = "INSERT INTO artistas VALUES(?,?,?)";
 
 		PreparedStatement comando;
 
@@ -62,7 +62,7 @@ public class ArtistaDAO {
 
 	public ArrayList<Artista> buscar() {
 		Connection conexion = administrador.dameConexion();
-		String comandoSQL = "SELECT * FROM Artistas;";
+		String comandoSQL = "SELECT * FROM artistas;";
 		ResultSet resultSet = null;
 		Artista artista = null;
 		ArrayList<Artista> artistas = new ArrayList<Artista>();
