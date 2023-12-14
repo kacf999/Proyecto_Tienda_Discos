@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<body>
+		<p>Carrito de compra</p>
+		<p:dataTable value="#{controlCarrito.discosCarrito}" var="discosCarrito">
+       		<p:column>
+           		<h:outputText value="#{discosCarrito.nombre}" />
+       		</p:column>
+       		<p:column>
+           		<h:outputText value="#{discosCarrito.precio}" />
+       		</p:column>
+   		</p:dataTable>
+		<h:form>
+			<p>Total a Pagar: </p>
+			<h:outputText value="#{controlCarrito.total}" />
+		</h:form>
+	
+	<a href="PagarCarrito.xhtml"><button>Pagar Carrito</button></a>
+	<a href="index.xhtml" ><button>Menu Principal</button></a>
+	</body>
+</html>

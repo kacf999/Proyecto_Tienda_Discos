@@ -26,6 +26,8 @@ public class ControlCarrito implements Serializable{
 	private Artista artista;
 	private List<Disco> discos;
 	private List<Artista> artistas;
+	private List<Disco> discosCarrito;
+	private double total;
 	@PostConstruct
 	public void init(){
 		carrito = new CarritoCompra();
@@ -33,6 +35,8 @@ public class ControlCarrito implements Serializable{
 		artista = new Artista();
 		discos = new ArrayList<Disco>();
 		artistas = new ArrayList<Artista>();
+		discosCarrito = new ArrayList<Disco>(); 
+		total = 0.0;
 		}
 
 	public CarritoCompra getCarrito() {
@@ -75,10 +79,35 @@ public class ControlCarrito implements Serializable{
 		this.artistas = artistas;
 	}
 	
+	public double getTotal() {
+		return total;
+	}
+
+	public void setTotal(double total) {
+		this.total = total;
+	}
+
+	public List<Disco> getDiscosCarrito() {
+		return discosCarrito;
+	}
+
+	public void setDiscosCarrito(List<Disco> discosCarrito) {
+		this.discosCarrito = discosCarrito;
+	}
+
+	public void VerCarrito() {
+		carrito.MostrarListaCompra();
+		discosCarrito = carrito.getDiscos();
+		total = carrito.getTotal();
+	}
 	
 	public void AgregarCarrito(Disco disco) {
 		System.out.println("Se agrego: "+disco.getNombre());
 		carrito.AgregarDisco(disco);
+		VerCarrito();
+		for(int i=0; i<discosCarrito.size();i++) {
+			System.out.println("Disco en la lista"+discosCarrito.get(i).getNombre());
+		}
 	}
 	
 }
