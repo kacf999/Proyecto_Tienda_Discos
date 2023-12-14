@@ -51,4 +51,8 @@ public class CarritoCompra {
 		System.out.println("Total: "+total);
 	}
 	
+	public void borrarlista() {
+		discos.clear();
+	}
+	
 }

@@ -21,8 +21,11 @@
 			<p>Total a Pagar: </p>
 			<h:outputText value="#{controlCarrito.total}" />
 		</h:form>
-	
-	<a href="PagarCarrito.xhtml"><button>Pagar Carrito</button></a>
+		<h:form>
+			<p:commandButton value="Pagar" action="#{controlCarrito.PagarCarrito}"/>
+		</h:form>
+	<a href="PagarCarrito.xhtml"><button>Confimar Compra</button></a>
+	<br />
 	<a href="index.xhtml" ><button>Menu Principal</button></a>
 	</body>
 </html>

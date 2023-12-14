@@ -110,4 +110,10 @@ public class ControlCarrito implements Serializable{
 		}
 	}
 	
+	public void PagarCarrito() {
+		System.out.println("Ejecutando borrar Lista");
+		total = 0.0;
+		carrito.borrarlista();
+		System.out.println(total);
+	}
 }
