@@ -53,6 +53,7 @@ public class CarritoCompra {
 	
 	public void borrarlista() {
 		discos.clear();
+		total = 0.0;
 	}
 	
 }
