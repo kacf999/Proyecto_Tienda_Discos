@@ -38,7 +38,7 @@
 			actionListener="#{controlRegistroDisco.consultar}" ajax="lista" />
 		<br />
 		<p:dataTable id="lista" value="#{controlRegistroDisco.discos}"
-			var="disco">>
+			var="disco">
 			<p:column>
 				<h:outputText value="#{disco.clave}" />
 			</p:column>
@@ -50,8 +50,6 @@
 			</p:column>
 			<p:column>
 				<h:outputText value="#{disco.precio}" />
-			</p:column>
-			<p:column>
 			</p:column>
 			<p:column>
 				<h:outputText value="#{disco.descripcion}" />

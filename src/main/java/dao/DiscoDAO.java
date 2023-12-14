@@ -51,7 +51,7 @@ public class DiscoDAO {
 	
 	public ArrayList<Disco> buscar(){
 		Connection conexion = administrador.dameConexion();
-		String comandoSQL = "SELECT * FROM artistas;";
+		String comandoSQL = "SELECT * FROM discos;";
 		ResultSet resultSet = null;
 		Disco disco = null;
 		ArrayList<Disco> discos = new ArrayList<Disco>();

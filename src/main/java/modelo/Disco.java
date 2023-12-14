@@ -31,6 +31,13 @@ public class Disco {
 		this.descripcion = descripcion;
 		this.claveArtista = claveArtista;
 	}
+	public Disco(String clave, String nombre, String anio, double precio, String descripcion) {
+		this.clave = clave;
+		this.nombre = nombre;
+		this.anio = anio;
+		this.precio = precio;
+		this.descripcion = descripcion;
+	}
 	public String getClave() {
 		return clave;
 	}

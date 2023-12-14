@@ -1,10 +1,42 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-</body>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<body>
+		<h:form>
+		<p:commandButton value="Consultar"
+			actionListener="#{controlRegistroDisco.consultar}" ajax="lista" />
+		<br />
+		<p:dataTable id="lista" value="#{controlRegistroDisco.discos}"
+			var="disco">
+			<p:column>
+				<h:outputText value="#{disco.nombre}" />
+			</p:column>
+			<p:column>
+				<h:outputText value="#{disco.anio}" />
+			</p:column>
+			<p:column>
+				<h:outputText value="#{disco.precio}" />
+			</p:column>
+			<p:column>
+				<h:outputText value="#{disco.descripcion}" />
+			</p:column>
+			<p:column>
+				<h:outputText value="#{disco.claveArtista}" />
+			</p:column>
+			<p:column>
+				<p:commandButton value="Agregar Carrito"
+					actionListener="#{controlCarrito.AgregarCarrito(disco)}"
+					update="lista" />
+			</p:column>
+			</p:dataTable>
+	</h:form>
+	
+	<a href="index.xhtml" ><button>Menu Principal</button></a>
+	</body>
 </html>
