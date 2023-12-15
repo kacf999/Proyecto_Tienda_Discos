@@ -6,26 +6,34 @@
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
-
+	<head>
+		<title>Lista de compra</title>
+		<link rel="stylesheet" type="text/css" href="styles.css"/>
+	</head>
 	<body>
-		<p>Carrito de compra</p>
+		<div class="contenedor">
+		<h1>Carrito de compra</h1>
 		<p:dataTable value="#{controlCarrito.discosCarrito}" var="discosCarrito">
-       		<p:column>
-           		<h:outputText value="#{discosCarrito.nombre}" />
+       		<p:column class ="tabla"> Disco:
+           		<h:outputText value="#{discosCarrito.nombre}" class = "tabla"/>
        		</p:column>
-       		<p:column>
-           		<h:outputText value="#{discosCarrito.precio}" />
+       		<p:column class = "tabla"> Precio: $
+           		<h:outputText value="#{discosCarrito.precio}" class = "tabla"/>
        		</p:column>
    		</p:dataTable>
 		<h:form>
-			<p>Total a Pagar: </p>
-			<h:outputText value="#{controlCarrito.total}" />
+			<h1>Total a Pagar: $ <h:outputText value="#{controlCarrito.total}" class="pago"/></h1>
+			
 		</h:form>
 		<h:form>
 			<p:commandButton value="Pagar" action="#{controlCarrito.PagarCarrito}"/>
 		</h:form>
+	<br />
+	<br />	
 	<a href="PagarCarrito.xhtml"><button>Confimar Compra</button></a>
 	<br />
+	<br />
 	<a href="index.xhtml" ><button>Menu Principal</button></a>
+	</div>
 	</body>
 </html>

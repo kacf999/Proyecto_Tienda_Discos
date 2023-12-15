@@ -6,29 +6,34 @@
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
-
+	<head>
+		<title>Gestion de Discos</title>
+		<link rel="stylesheet" type="text/css" href="styles.css"/>
+	</head>
 <body>
+	<h1>Gestión de Discos</h1>
+	<div class="contenedor">
 	<h:form>
-		<p>Clave</p>
-		<p:inputText value="#{controlRegistroDisco.disco.clave}" />
+		<p class = "letras">Clave</p>
+		<p:inputText value="#{controlRegistroDisco.disco.clave}" class="cajaTexto" maxlength="5"/>
 		<br />
-		<p>Nombre</p>
-		<p:inputText value="#{controlRegistroDisco.disco.nombre}" />
+		<p class = "letras">Nombre</p>
+		<p:inputText value="#{controlRegistroDisco.disco.nombre}" class="cajaTexto" maxlength="25"/>
 		<br />
-		<p>anio</p>
-		<p:inputText value="#{controlRegistroDisco.disco.anio}" />
+		<p class = "letras">Año</p>
+		<p:inputText value="#{controlRegistroDisco.disco.anio}" class="cajaTexto" maxlength="4"/>
 		<br />
-		<p>precio</p>
-		<p:inputText value="#{controlRegistroDisco.disco.precio}" />
+		<p class = "letras">Precio</p>
+		<p:inputText value="#{controlRegistroDisco.disco.precio}" class="cajaTexto"/>
 		<br />
-		<p>stock</p>
-		<p:inputText value="#{controlRegistroDisco.disco.stock}" />
+		<p class = "letras">Stock</p>
+		<p:inputText value="#{controlRegistroDisco.disco.stock}" class="cajaTexto"/>
 		<br />
-		<p>descripcion</p>
-		<p:inputText value="#{controlRegistroDisco.disco.descripcion}" />
+		<p class = "letras">Descripcion</p>
+		<p:inputText value="#{controlRegistroDisco.disco.descripcion}" class="cajaTexto" maxlength="35"/>
 		<br />
-		<p>Clave Artista</p>
-		<p:inputText value="#{controlRegistroDisco.disco.claveArtista}" />
+		<p class = "letras">Clave Artista</p>
+		<p:inputText value="#{controlRegistroDisco.disco.claveArtista}" class="cajaTexto" maxlength="5"/>
 		<br />
 		<p:commandButton value="Agregar"
 			actionListener="#{controlRegistroDisco.agregar}" ajax="lista" />
@@ -39,23 +44,23 @@
 		<br />
 		<p:dataTable id="lista" value="#{controlRegistroDisco.discos}"
 			var="disco">
-			<p:column>
-				<h:outputText value="#{disco.clave}" />
+			<p:column class="tabla"> Clave:
+				<h:outputText value="#{disco.clave}" class = "tabla"/>
 			</p:column>
-			<p:column>
-				<h:outputText value="#{disco.nombre}" />
+			<p:column class="tabla"> nombre:
+				<h:outputText value="#{disco.nombre}" class = "tabla"/>
 			</p:column>
-			<p:column>
-				<h:outputText value="#{disco.anio}" />
+			<p:column class="tabla"> Año:
+				<h:outputText value="#{disco.anio}" class = "tabla"/>
 			</p:column>
-			<p:column>
-				<h:outputText value="#{disco.precio}" />
+			<p:column class="tabla"> Precio: $
+				<h:outputText value="#{disco.precio}" class = "tabla"/>
 			</p:column>
-			<p:column>
-				<h:outputText value="#{disco.descripcion}" />
+			<p:column class="tabla"> Descripcion:
+				<h:outputText value="#{disco.descripcion}" class = "tabla"/>
 			</p:column>
-			<p:column>
-				<h:outputText value="#{disco.claveArtista}" />
+			<p:column class="tabla"> Clave Artista:
+				<h:outputText value="#{disco.claveArtista}" class = "tabla"/>
 			</p:column>
 			<p:column>
 				<p:commandButton value="Eliminar"
@@ -64,6 +69,9 @@
 			</p:column>
 		</p:dataTable>
 	</h:form>
+	<br />
+	<br />
 	<a href="index.xhtml" ><button>Menu Principal</button></a>
+	</div>
 </body>
 </html>
