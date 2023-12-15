@@ -66,11 +66,11 @@ h1{
 .cajaTexto {
 	font-family: verdana;
 	font-weight: bold;
-	width: 200px; /* Ancho del input */
-	padding: 10px; /* Espacio alrededor del texto */
-	font-size: 24px; /* Tamaño del texto */
-	border: 5px solid black; /* Borde del input */
-	border-radius: 5px; /* Bordes redondeados */
+	width: 200px; 
+	padding: 10px;
+	font-size: 24px; 
+	border: 5px solid black; 
+	border-radius: 5px; 
 }
 
 .tabla{

@@ -12,7 +12,7 @@ import jakarta.inject.Named;
 import modelo.Artista;
 import modelo.CarritoCompra;
 import modelo.Disco;
-import modelo.Relacion;
+
 
 @Named
 @SessionScoped
